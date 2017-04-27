@@ -1,0 +1,48 @@
+import java.util.*;
+import java.lang.*;
+
+/*
+ * 
+ Author: Ruziboev Solehjon
+ Date: 29.02.2016
+ Version: 1.0
+ */
+
+public class Square extends Rectangle {
+        
+       // properties
+       protected int side;
+       protected boolean selected;
+       
+       // constructors
+       public Square (int side, double x, double y){
+              super(side, side, x, y);
+              this.side = side;
+       
+              selected = false;
+       } 
+       
+       public int getSide(){
+              return side;
+       }
+       
+       
+       public boolean getSelected(){
+              return selected;
+       }
+       
+       public void setSelected(boolean x){
+              selected = x;
+       }
+       /*
+       public Shape contains(int x, int y){
+              if ((int)this.x == x && (int)this.y == y)
+                 return this;
+              else 
+                 return null;
+       }
+       */
+       public String toString (){
+              return "Shape - Square\nThe area is - " + getArea() + "\nThe side is - " + getSide() + "\nThe state of selected: " + selected + "\nThe location is - " + x + ", " + y + "\n\n";        
+       }
+} 

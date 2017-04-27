@@ -1,0 +1,37 @@
+/*
+  Author:   Solehjon Ruziboev
+  Date:     21.03.2016
+  Version:  1.0
+ */
+
+import java.util.*;
+import java.lang.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import myWorld.*;
+import shapes.*;
+
+public class Balloon extends Circle implements Drawable{
+       final static int RADIUS = 12, MAX_RADIUS = 100, UNITS_INCREASED = 1;
+       
+       public Balloon(int x, int y){
+              super(RADIUS, x, y);
+       }
+       
+       public void grow(){
+              if (radius == MAX_RADIUS){
+                 radius = 0; 
+              }
+              radius += UNITS_INCREASED;
+       }
+       
+       public boolean isExploded(){
+              return (radius == MAX_RADIUS);
+       }
+       
+       public void draw(Graphics g){
+              g.setColor(Color.BLUE);
+              g.drawOval((int)getX() - (radius), (int)getY() - (radius), 2 * radius,2 * radius);
+       }
+}
